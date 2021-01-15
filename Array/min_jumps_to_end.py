@@ -43,7 +43,7 @@ def find_min_jump_to_end_dp(array, length):
 
     return -1
 
-    
+
 
 def find_min_jumps_to_end(array, start, end):
 
@@ -63,6 +63,7 @@ def find_min_jumps_to_end(array, start, end):
 array = [1, 3, 6, 3, 2, 3, 6, 8, 9, 5]
 print(find_min_jumps_to_end(array, 0, len(array)-1))
 print(find_min_jump_to_end_dp(array, len(array)-1))
+print("this", min_jumps_novice(array))
 
 array = [1, 3, 1, 0, 0, 1, 1, 2, 2, 1,1,1,1,1,1,1,1,1]
 print(find_min_jumps_to_end(array, 0, len(array)-1))
