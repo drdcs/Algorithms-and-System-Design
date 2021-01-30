@@ -36,7 +36,12 @@ class Graph:
 
 if __name__ == '__main__':
 
-    number_graph = Graph()
-    edges = [(0,1), (0,2), (1,2), (2,0), (2,3), (3,3)]
-    number_graph.addFromEdges(edges)
-    number_graph.DFS(0)
+    # number_graph = Graph()
+    # edges = [(0,1), (0,2), (1,2), (2,0), (2,3), (3,3)]
+    # number_graph.addFromEdges(edges)
+    # number_graph.DFS(0)
+
+    edges = [(0,1),(1,2),(1,3),(2,3)]
+    tw = Graph()
+    tw.addFromEdges(edges)
+    tw.DFS(0)
