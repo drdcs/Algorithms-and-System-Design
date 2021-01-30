@@ -3,7 +3,6 @@ Check if a graph contains cycle or not.
 
 """
 
-
 from collections import defaultdict
 
 class Graph:
@@ -55,5 +54,4 @@ if __name__ == '__main__':
     V = ['A','B','C','D','E']
     g = Graph(V)
     g.addEdges(edges)
-    g.showGraph()
     print(g.isCyclic())
