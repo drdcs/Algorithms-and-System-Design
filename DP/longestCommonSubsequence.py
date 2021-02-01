@@ -27,7 +27,7 @@ def longestCommonSubsequence(str1, str2):
     str1_l = len(str1)
     str2_l = len(str2)
     DP = [[0 for x in range(str1_l+1)] for y in range(str2_l+1)]
-    # 
+    # str2 is row and str1 is column from above dp construction .. 
     for i in range(1, str2_l+1):
         for j in range(1, str1_l+1):
             if str1[j-1] == str2[i-1]:
