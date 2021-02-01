@@ -45,7 +45,7 @@ Consistent hashing facilitates the distribution of data across a set of nodes in
          * The hash value of the key maps directly onto the same hash vale of a db server – in which case we place it on that server.
     * <Example: Assume we have 4 incoming keys : key0, key1, key2, key3 and none of them directly maps to the hash value of any of the 4 servers on our hash ring. So we travel clockwise from the point these keys maps to in our ring till we find the first db server and insert the key there. >
 
-![alt text](https://github.com/drdcs/simple_algo/blob/main/SystemDesign/ConsistentHashing.png?raw=true)
+![alt text](https://github.com/drdcs/simple_algo/blob/main/images/ConsistentHashing.png?raw=true)
 5. **Adding a server to the Ring**: If we add another server to the hash Ring, server 4, we'll need to remap the keys. However, ONLY the keys that reside between server 3 and server 0 needs to be remapped to server 4. On an average , we'll need to remap only k/n keys , where k is the number of keys and n is the number of servers. This is in sharp contrast to our modulo based placement approach where we needed to remap nearly all the keys.
 
 6. Removing a server from the ring: A server might go down in production and our consistent hashing scheme ensures that it has minimal effect on the number of keys and servers affected.
