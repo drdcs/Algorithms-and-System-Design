@@ -11,7 +11,7 @@ As a data distributed storage system make use of multiple computers, **load bala
 
 The Distributed Data stored in One Primary Node and rest replicated to Secondary Nodes.(InSync Replicas). The Primary Node for the data is being decided on basis of **PartitioHashing or Hashing Technique**.
 
-The Hashed Key + Data comes to the cluster where nodes are in **Consistent Hashing** pattern. So, the data comes to Server based on **"serverIndex = hashValue % n"**.
+The Hashed Key + Data comes to the cluster where nodes are in **Consistent Hashing** pattern.Unlike, the data comes to Server based on **"serverIndex = hashValue % n"**.
 
 The Nodes in a cluster have primary responsibility and Secondary responsibilty. The nodes in a cluster have each others information based on **gossip protocol**. So, When a node goes down the primary responsibilty(of storing data) is being shifted to new node.
 
@@ -39,10 +39,17 @@ Consistent hashing facilitates the distribution of data across a set of nodes in
 3. **Placing DB Servers in Key Space (HashRing)**: We're given a list of database servers to start with. Using the hash function, we map each db server to a specific place on the ring. For example, if we have 4 servers, we can use a hash of their IP addressed to map them to different integers using the hash function. This simulates placing the four servers into a different place on the ring as shown below.
 
 4. **Determining Placement of Keys on Servers**: To find which database server an incoming key resides on (either to insert it or query for it ), we do the following:
-    > Run the key through the same hash function we used to determine db server placement on the ring.​
-    > After hashing the key, we'll get an integer value which will be contained in the hash space, i.e., it can be    mapped to some postion in the hash ring. There can be two cases:
-         > The hash value maps to a place on the ring which does not have a db server. In this case, we travel clockwise on the ring from the point where the key mapped to untill we find the first db server. Once we find the first db server travelling clockwise on the ring, we insert the key there. The same logic would apply while trying to find a key in the ring.
-         > The hash value of the key maps directly onto the same hash vale of a db server – in which case we place it on that server.
-    <<Example: Example: Assume we have 4 incoming keys : key0, key1, key2, key3 and none of them directly maps to the hash value of any of the 4 servers on our hash ring. So we travel clockwise from the point these keys maps to in our ring till we find the first db server and insert the key there. >>
+    * Run the key through the same hash function we used to determine db server placement on the ring.​
+    * After hashing the key, we'll get an integer value which will be contained in the hash space, i.e., it can be    mapped to some postion in the hash ring. There can be two cases:
+         * The hash value maps to a place on the ring which does not have a db server. In this case, we travel clockwise on the ring from the point where the key mapped to untill we find the first db server. Once we find the first db server travelling clockwise on the ring, we insert the key there. The same logic would apply while trying to find a key in the ring.
+         * The hash value of the key maps directly onto the same hash vale of a db server – in which case we place it on that server.
+    * <Example: Assume we have 4 incoming keys : key0, key1, key2, key3 and none of them directly maps to the hash value of any of the 4 servers on our hash ring. So we travel clockwise from the point these keys maps to in our ring till we find the first db server and insert the key there. >
 
+![alt text](https://github.com/drdcs/simple_algo/blob/main/SystemDesign/ConsistentHashing.png?raw=true)
 5. **Adding a server to the Ring**: If we add another server to the hash Ring, server 4, we'll need to remap the keys. However, ONLY the keys that reside between server 3 and server 0 needs to be remapped to server 4. On an average , we'll need to remap only k/n keys , where k is the number of keys and n is the number of servers. This is in sharp contrast to our modulo based placement approach where we needed to remap nearly all the keys.
+
+6. Removing a server from the ring: A server might go down in production and our consistent hashing scheme ensures that it has minimal effect on the number of keys and servers affected.
+
+
+
+
