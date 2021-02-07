@@ -54,11 +54,15 @@ def sortedArray(list):
             min_ele.value = list[min_ele.list_num][min_ele.index]
             heappush(pq, min_ele)
     return result
-    
+
 if __name__ == '__main__':
+    
   list = [[ 10, 20, 30, 40 ],
           [ 15, 25, 35 ],
           [ 27, 29, 37, 48, 93 ],
           [ 32, 33 ]
   ]
+  print(sortedArray(list))
+
+  list = [[10, 20, 30, 40], [15, 25, 35], [27, 29, 37, 48, 93], [32, 33]]
   print(sortedArray(list))
