@@ -28,7 +28,7 @@ def findLargestGrid(A):
                 path[i][j] = 1 + min(path[i-1][j], path[i][j-1], path[i-1][j-1])
                 if largest < path[i][j]:
                     largest = path[i][j]
-    return largest
+    return largest * largest
 
 if __name__ == '__main__':
     A = [[1,0,1,0,0],[1,0,1,1,1],[1,1,1,1,1],[1,0,0,1,0]]
