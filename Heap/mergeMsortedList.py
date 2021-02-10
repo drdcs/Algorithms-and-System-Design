@@ -24,7 +24,7 @@ import heapq
 from heapq import heappop, heappush
 import time
 
-class Node:
+class Node: 
 
     def __init__(self, value, list_num, index):
 
