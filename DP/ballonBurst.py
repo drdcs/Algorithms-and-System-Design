@@ -29,9 +29,9 @@ def getMax(A):
             # For a sub-array from indices left, right 
             # This innermost loop finds the last balloon burst 
             for last in range(left, right + 1): 
-                dp[left][right] = max(dp[left][right], \ 
-                                      dp[left][last-1] + \ 
-                                      A[left-1]*A[last]*A[right + 1] + \ 
+                dp[left][right] = max(dp[left][right], \
+                                      dp[left][last-1] + \
+                                      A[left-1]*A[last]*A[right + 1] + \
                                       dp[last + 1][right]) 
     return(dp[1][N]) 
   
