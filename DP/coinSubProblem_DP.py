@@ -15,6 +15,7 @@ target=6
 2 |  T    F    T    T    T    T    T
 -------------------------------------
 """
+
 def coinExchange(coins, W, N):
 
     # build the 2-d array.

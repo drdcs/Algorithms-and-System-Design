@@ -22,7 +22,7 @@ class Graph:
             s = queue.pop(0)
             print(s, end='->')
             for neighbour in self.graph[s]:
-                if visited[neighbour] == False:
+                 if visited[neighbour] == False:
                     queue.append(neighbour)
                     visited[neighbour] = True
 
