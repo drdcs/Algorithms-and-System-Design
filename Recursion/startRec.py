@@ -9,6 +9,7 @@ def printNumReverse(n: int):
         return 1
     print(n, end="->")
     printNumReverse(n-1)
+    
 if __name__ == '__main__':
     printNum(1)
     print('\n')
