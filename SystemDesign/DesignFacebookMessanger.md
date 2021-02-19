@@ -44,22 +44,29 @@ Now we have another problem , because before we needed to connect one user with 
 
 ### database models ?
                               
-| users | . |                      | messages | . |                
-| :---: | :---: |                  | :---: | :---: |                              
-| id | int |                       | id | int |                       
-| username | string |              | user | int |                 
-| lastActive | timestamp |         | conversation | int |                             
-                                   | text | int |
-                                   | conversation | string |
+| users | #1 |
+| :---: | :---: |
+| id | int |
+| username | string |
+| lastActive | timestamp |
+               
+| messages | #1 |
+| :---: | :---: |
+| id | int |
+| user | int |
+| conversation | int |
+| text | int |
+| conversation | string |
 
-| conversation | . |                                  
-| :---: | :---: |                                                 
-| id | int |                                                           
-| name | string |                                             
+| conversation | #1 |
+| :---: | :---: |
+| id | int |
+| name | string |
 
 
-| conversation user | . |
+| conversation user | #1 |
 | :---: | :---: |
 | conversation | int |
 | user | int |
+
 
