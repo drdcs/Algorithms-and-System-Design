@@ -44,13 +44,13 @@ Now we have another problem , because before we needed to connect one user with 
 
 ### database models ?
                               
-| users  |
+| users | . |
 | :---: | :---: |
 | id | int |
 | username | string |
 | lastActive | timestamp |
                
-| messages  |
+| messages | . |
 | :---: | :---: |
 | id | int |
 | user | int |
@@ -59,13 +59,13 @@ Now we have another problem , because before we needed to connect one user with 
 | conversation | string |
 
 
-| conversation  |
+| conversation | . |
 | :---: | :---: |
 | id | int |
 | name | string |
 
 
-| conversation user  |
+| conversation user | . |
 | :---: | :---: |
 | conversation | int |
 | user | int |
