@@ -41,3 +41,32 @@ Now we have another problem , because before we needed to connect one user with 
 9. To cache the message for faster retrieval , we can have a cache mechanism to reduce the cost of database hits for messages.
 
 10. Notify Users for offline messages they have missed, we can have a message service forward the message to the notification service and it then forward to the user as an alert.
+
+### database models ?
+                              
+| users | #1 |
+| :---: | :---: |
+| id | int |
+| username | string |
+| lastActive | timestamp |
+               
+| messages | #1 |
+| :---: | :---: |
+| id | int |
+| user | int |
+| conversation | int |
+| text | int |
+| conversation | string |
+
+
+| conversation | #1 |
+| :---: | :---: |
+| id | int |
+| name | string |
+
+
+| conversation user | #1 |
+| :---: | :---: |
+| conversation | int |
+| user | int |
+
