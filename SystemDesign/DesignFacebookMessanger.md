@@ -9,7 +9,7 @@
 
 ### Technical Goals: 
 
-* Low Latency.
+* Low Latency
 * High Volume
 * Reliable
 * Secure
@@ -41,6 +41,11 @@ Now we have another problem , because before we needed to connect one user with 
 9. To cache the message for faster retrieval , we can have a cache mechanism to reduce the cost of database hits for messages.
 
 10. Notify Users for offline messages they have missed, we can have a message service forward the message to the notification service and it then forward to the user as an alert.
+
+### Flow diagram
+
+![alt text](https://github.com/drdcs/simple_algo/blob/main/images/FM.png?raw=true)
+
 
 ### database models ?
                               
