@@ -53,6 +53,7 @@ def frequent_element_heap(arr):
     return largest
     # log(d) + o(n) => log d to extract top element , O(n) to build the hash Table
     # d = distinct element in the array.
+    # o(d) = auxilary space
 
 if __name__ == '__main__':
     arr = [6,6,6,6,6,6,6,1,1,2,3,3,4,4,5,5,5,5,5,5,5,5]
