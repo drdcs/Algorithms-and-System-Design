@@ -47,31 +47,38 @@ Now we have another problem , because before we needed to connect one user with 
 ![alt text](https://github.com/drdcs/simple_algo/blob/main/images/FM.png?raw=true)
 
 
-### database models ?
-                              
+### database models !!
+
+*users table: users information with lastactive to give push notification or to show in app when the user last activ ated.*
+
 | users | #1 |
 | :---: | :---: |
 | id | int |
 | username | string |
 | lastActive | timestamp |
-               
+
+*message information userid and correlated text and the blob strorage url*               
+
 | messages | #1 |
 | :---: | :---: |
 | id | int |
 | user | int |
 | conversation | int |
-| text | int |
-| conversation | string |
+| text | string |
+| media_url | string |
 
-| conversation | #1 |
+*conversation group is the index of the group id and channel name ..*
+
+| conversation| #1 |
 | :---: | :---: |
 | id | int |
 | name | string |
 
+*mapping of conversationID and userID*
 
-| conversation user | #1 |
+| conversation users | #1 |
 | :---: | :---: |
-| conversation | int |
+| conversationID | int |
 | user | int |
 
 
