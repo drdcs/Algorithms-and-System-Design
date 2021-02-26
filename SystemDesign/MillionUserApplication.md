@@ -33,4 +33,10 @@ Response Lokks Something Like below:
     }
 }
 ```
+### 4
+
+Databases persist the data. There are broadly 2 choices for persistance SQL/NO SQL.
+*SQL: Relational databases represent and store data in tables and rows. You can perform join operations using SQL across different database tables.*
+*NoSQL:Non-Relational databases are also called NoSQL databases.These databases are grouped into four categories: **key-value stores, graph stores, column stores, and document stores**.*
+
 
