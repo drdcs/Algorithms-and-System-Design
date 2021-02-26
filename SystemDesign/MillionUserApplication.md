@@ -39,7 +39,19 @@ Response Lokks Something Like below:
 *SQL: Relational databases represent and store data in tables and rows. You can perform join operations using SQL across different database tables.*
 *NoSQL:Non-Relational databases are also called NoSQL databases.These databases are grouped into four categories: **key-value stores, graph stores, column stores, and document stores**.*
 
-***Database Replication: ***
+**Database Replication:** *a master/slave relationship between the original (master) where writes happen and the replicals (slaves) where the server asks for read.All DML commands being sent to the master.*
+
+```Advantages of database replication:
+• Better performance: In the master-slave model, all writes and updates happen in master
+nodes; whereas, read operations are distributed across slave nodes. This model improves
+performance because it allows more queries to be processed in parallel.
+• Reliability: If one of your database servers is destroyed by a natural disaster, such as a
+typhoon or an earthquake, data is still preserved. You do not need to worry about data loss
+because data is replicated across multiple locations.
+• High availability: By replicating data across different locations, your website remains in
+operation even if a database is offline as you can access data stored in another database
+server.
+```
 
 ### 5
 
@@ -47,6 +59,6 @@ Response Lokks Something Like below:
 
 *To mitigate issues of Vertical Scaling, Horizontal Scaling is great Choice.Unless having a single sever, we can have multiple severs where app being hosted.Instead connecting to ther server directly, we can connect it via **Load Balancer***
 
-*Load Balancer - redirects the traffic among web Servers. Users connects to the IP(public ip) of Loadbalancer and load balancer connect to server using private Ips. If Server-1 goes offline then traffic redirects to Server-2.We can add n number of Servers to Load Balancer.*
+***Load Balancer*** - *redirects the traffic among web Servers. Users connects to the IP(public ip) of Loadbalancer and load balancer connect to server using private Ips. If Server-1 goes offline then traffic redirects to Server-2.We can add n number of Servers to Load Balancer.*
 
 
